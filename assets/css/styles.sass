@@ -1,0 +1,753 @@
+
+// =============== GOOGLE FONTS ===============
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&display=swap')
+/*=============== 1- components --> Colors , --> mixins , etc... ===============*/
+@import 'components'
+/*========== components ==========*/
+@import 'media'
+/*=============== 2- General Style ===============*/
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+a
+    text-decoration: none
+
+html
+    scroll-behavior: smooth
+    overflow-x: hidden
+    user-select: none
+    body
+        scroll-behavior: smooth
+        // overflow: hidden
+    .overlay
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0 ,0 ,0.1)
+    .header-info
+        padding: 20px 0
+        line-height: 1.6
+        span
+            color: $blue-color
+        span.btn
+            background: #e7f1fd
+            font-weight: bold
+            font-size: 15px
+            letter-spacing: 2px
+        h2
+            padding: 10px 0
+            font-weight: bold
+            span
+        p
+            margin: 0 auto
+            margin-bottom: 20px
+    .top-section
+        background: $blue-color
+        color: $gray-progress-color
+        .top-section-content
+            padding: 10px 0 0 0
+            font-size: 15px
+            ul.info
+                gap: 20px
+                li
+                    display: flex
+                    align-items: center
+                    gap: 5px
+                    svg
+                    a
+                        color: $gray-progress-color
+                        &:hover
+                            text-decoration: underline
+            ul.social
+                gap: 15px
+                li
+                    a
+                        color: $gray-progress-color
+                        svg
+                        &:hover
+                            color: $white-color
+    .header
+        padding: 10px 0
+        background: $white-color
+        box-shadow: 0 5px 5px 0 #9d9d9d47
+        a
+            color: $black-color
+        .active
+            &::after
+                @include lineAfter
+                width: 80% !important
+            a
+                color: $blue-color
+        .header-content
+            a.navbar-brand
+                font-weight: bold
+                font-size: 2rem
+                span
+                    color: $blue-color
+            button.navbar-toggler
+            .collapse
+                justify-content: end
+                .navbar-nav
+                    gap: 20px
+                    & > li
+                        position: relative
+                        &::after
+                            @include lineAfter
+                        &:hover
+                            &::after
+                                width: 80%
+                        a
+                    li.deepDropdown
+                        .dropdown-menu
+                            padding: 20px
+                            line-height: 2
+                            li.dropdown
+                                &:hover
+                                    .small-dropdown
+                                        display: block
+                                        position: absolute
+                                        left: calc(-100% - 40px)
+                                        top: 7px
+                        &:hover
+                            & > .dropdown-menu
+                                display: block
+                                a
+                                    &:hover
+                                        color: $blue-color
+    .main
+        .welcome
+            background: url(../../assets/img/hero-bg.jpg)
+            height: calc(100vh - 25vh)
+            position: relative
+            background-size: cover
+            background-attachment: fixed
+            background-repeat: no-repeat
+            .overlay
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                background: rgba(0,0 ,0 ,0.1)
+            .welcome-content
+                margin-top: 15%
+                h1
+                    font-weight: bold
+                    font-size: 3.2rem
+                    text-transform: capitalize
+                    span
+                        color: $blue-color
+                p
+                    color: $dark-color
+                    font-size: 1.5rem
+                .btns
+                    margin: 30px 0
+                    display: flex
+                    align-items: center
+                    gap: 20px
+                    button.btn
+                        background: $blue-color
+                        color: $white-color
+                        padding: 10px 25px
+                    a.watch-video
+                        display: flex
+                        align-items: center
+                        gap: 10px
+                        .icon
+                            border: 2px solid $blue-color
+                            width: 35px
+                            height: 35px
+                            border-radius: 50%
+                            text-align: center
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            svg
+                        span
+                            color: $black-color
+                            text-transform: capitalize
+        .featured-services
+            .col-content
+                position: relative
+                padding: 20px
+                box-shadow: 5px 5px 5px 3px #80808038 , -5px -5px 5px 3px #80808010
+                line-height: 1.7
+                border-radius: 10px
+                margin-bottom: 30px
+                svg
+                    color: $blue-color
+                    font-size: 2.5rem
+                    padding: 20px 5px
+                h5
+                    font-weight: bold
+                    font-size: 18px
+                p
+                    color: $dark-color
+                    font-size: 15px
+                    opacity: 0.8
+                svg,
+                h5,
+                p
+                    transition: 700ms
+                &::after
+                    @include bottomTopAfter
+                &:hover
+                    cursor: pointer
+                    color: $white-color
+                    svg
+                        color: $white-color
+                    p
+                        color: $white-color
+                    &::after
+                        height: 100%
+        .about
+            background: $gray-color
+            .about-content
+                color: $dark-color
+                .row
+                    line-height: 1.7
+                    img
+                        margin-bottom: 20px
+                    h3
+                        font-weight: bold
+                        font-size: 25px
+                    p.italic
+                        font-style: italic
+                    p
+                        opacity: 0.7
+                    ul
+                        margin: 45px 0
+                        li
+                            align-items: center
+                            gap: 20px
+                            .icon
+                                width: 60px
+                                height: 60px
+                                border-radius: 50%
+                                background: white
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                padding: 20px
+                                box-shadow: 5px 5px 5px 5px #cecece3d , -5px -5px 5px 5px #cecece3d
+                                svg
+                                    color: $blue-color
+                                    font-size: 1.5rem
+                            .info
+                                flex-direction: column
+                                h5
+                                    font-size: 18px
+        .skills
+            .skills-content
+                .row
+                    .flex-element
+                        flex-direction: column
+                        margin-bottom: 10px
+                        gap: 25px
+                        .progress-e
+                            height: 40px
+                            .skill
+                                display: flex
+                                justify-content: space-between
+                                margin-bottom: 10px
+                                span
+                                    text-transform: uppercase
+                                    font-size: 13px
+                                    font-weight: bold
+                            .progress-bar
+                                height: 10px
+                                background: $gray-progress-color
+                                .progress-bar-color
+                                    background: $blue-color
+                                    height: 100%
+        .counter
+            .counter-content
+                .row
+                    .col-content
+                        background: $dark-gray-color
+                        text-align: center
+                        position: relative
+                        padding: 40px 20px 15px
+                        margin-bottom: 40px
+                        .icon
+                            width: 55px
+                            height: 55px
+                            background: $blue-color
+                            color: $white-color
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            border-radius: 50%
+                            position: absolute
+                            top: -25px
+                            left: 50%
+                            transform: translateX(-50%)
+                            font-size: 24px
+                            border: 5px solid $white-color
+                        .info
+                            h2
+                            p
+                                font-size: 15px
+                                opacity: 0.7
+        .clients
+            background: $dark-gray-color
+            .clients-content
+                .row
+                    justify-content: center
+                    align-items: center
+                    .img
+                        img
+                            display: block
+                            margin: 0 auto
+                            transition: 700ms
+                            &:hover
+                                transform: scale(1.1)
+        .services
+            .services-content
+                color: $dark-color
+                .row
+                    .col-content
+                        color: $dark-color
+                        border: 1px solid #106eea25
+                        text-align: center
+                        margin-bottom: 20px
+                        padding: 40px
+                        line-height: 2
+                        transition: 700ms
+                        & *
+                            transition: 700ms
+                        .icon
+                            background: $dark-gray-color
+                            width: 65px
+                            height: 65px
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            color: $blue-color
+                            margin: 20px auto
+                            border: 1px solid #106eea25
+                            font-size: 20px
+                            svg
+                        h2
+                            font-weight: bold
+                            font-size: 25px
+                        p
+                            font-size: 15px
+                            opacity: 0.7
+                        &:hover
+                            border: none
+                            box-shadow: 5px 5px 5px 5px $gray-color , -4px -4px 5px 5px $gray-color
+                            cursor: pointer
+                            .icon
+                                border-color: $blue-color
+                            h2
+                                color: $blue-color
+        .testimonials
+            background: url(../../assets/img/testimonials-bg.jpg)
+            background-attachment: fixed
+            background-size: cover
+            background-repeat: no-repeat
+            position: relative
+            height: 75vh
+            color: $white-color
+            .overlay
+                background: rgba(0,0 ,0 ,0.7)
+            .testimonials-content
+                margin: 40px 0
+                .carousel
+                    z-index: 99
+                    .carousel-indicators
+                        bottom: -50px
+                        button
+                            width: 10px !important
+                            height: 10px !important
+                            border-radius: 50%
+                            margin: 0 5px
+                    .carousel-inner
+                        text-align: center
+                        .carousel-item
+                            height: 100%
+                            position: relative
+                            .img
+                                width: 120px
+                                height: 120px
+                                border: 5px solid gray
+                                border-radius: 50%
+                                margin: 10px auto
+                                img
+                                    border-radius: 50%
+                            .info
+                                h4,h3
+                                    text-transform: capitalize
+                                h4
+                                    font-size: 15px
+                                    opacity: 0.8
+                                    margin-top: 0
+                                h3
+                                    margin-bottom: 5px
+                                    font-size: 20px
+                                    font-weight: bold
+                                p
+                                    opacity: 0.7
+                                    width: 80%
+                                    margin: 20px auto
+                                    svg
+                                        font-size: 30px
+                                        padding: 0 10px
+        .portfolio
+            .portfolio-content
+                color: $dark-color
+                .list-filter
+                    display: flex
+                    gap: 20px
+                    text-transform: uppercase
+                    cursor: pointer
+                    margin: 0 auto 30px
+                    width: 200px
+                    li:hover
+                        color: $blue-color
+                    li.active
+                        color: $blue-color
+                .galary
+                    flex-direction: column
+                    justify-content: start
+                    align-content: start
+                    align-items: start
+                    gap: 30px
+                    column-count: 3
+                    .div
+                        display: inline-block
+                        min-height: 150px
+                        margin-bottom: 30px
+                        .img
+                            position: relative
+                            img
+                                width: 100%
+                            .abs
+                                position: absolute
+                                width: 80%
+                                background: #fff
+                                display: flex
+                                justify-content: space-between
+                                left: 50%
+                                transform: translateX(-50%)
+                                bottom: 0
+                                padding: 10px 20px 0
+                                align-items: center
+                                transition: 700ms
+                                opacity: 0
+                                visibility: hidden
+                                .info
+                                    h6
+                                        font-weight: bold
+                                        text-transform: capitalize
+                                    p
+                                        font-size: 15px
+                                        opacity: 0.7
+                                        text-transform: capitalize
+                                .icon
+                                    display: flex
+                                    gap: 20px
+                                    svg
+                                        &:hover
+                                            color: $blue-color
+                        &:hover
+                            .abs
+                                opacity: 1
+                                visibility: visible
+                                bottom: 5%
+        .team
+            background: $gray-color
+            .team-content
+                .team-members
+                    .col-content
+                        margin-bottom: 20px
+                        margin-right: 8% !important
+                        margin-left: 8% !important
+                        box-shadow: 5px 5px 5px 5px #cecece3d , -5px -5px 5px 5px #cecece3d
+                        &:last-of-type
+                            margin-right: 0
+                        .img
+                            position: relative
+                            img
+                            .social-icon
+                                position: absolute
+                                bottom: 10%
+                                left: 50%
+                                transform: translateX(-50%)
+                                opacity: 0
+                                visibility: hidden
+                                transition: 700ms
+                                ul
+                                    gap: 10px
+                                    font-size: 20px
+                                    li
+                                        background: $blue-color
+                                        padding: 0 5px
+                                        border-radius: 5px
+                                        opacity: 0.7
+                                        &:hover
+                                            opacity: 1
+                                        a
+                                            color: $white-color
+                        .card-body
+                            h3
+                                font-size: 17px
+                                font-weight: bold
+                            p
+                                font-size: 13px
+                                opacity: 0.5
+                        &:hover
+                            cursor: pointer
+                            .social-icon
+                                bottom: 0
+                                opacity: 1
+                                visibility: visible
+        .pricing
+            .pricing-content
+                .row
+                    .col-content
+                        margin-bottom: 20px
+                        box-shadow: 0 0 4px rgba(0,0 ,0 ,0.12)
+                        border-radius: 10px
+                        line-height: 2
+                        .col-header,
+                        .col-footer
+                            color: $dark-color
+                            background: #f8f8f8
+                            padding: 20px
+                            h5
+                                font-size: 16px
+                                text-transform: capitalize
+                        .col-header.head-blue
+                            background: $blue-color
+                            color: $white-color
+                            border-radius: 10px 10px 0 0
+                        .col-header.col-ultimate
+                            position: relative
+                            overflow: hidden
+                            .ultimate
+                                background: $blue-color
+                                color: $white-color
+                                position: absolute
+                                transform: rotate(45deg)
+                                width: 50%
+                                height: 34%
+                                top: 22%
+                                right: -15%
+                                font-size: 13px
+                                p
+                                    opacity: 0.7
+                        .col-body
+                            padding-bottom: 10px
+                            p
+                                font-size: 20px
+                                color: #ccc
+                                font-weight: 100
+                                span
+                                    color: $blue-color
+                                    font-weight: bold
+                                    font-size: 2.3rem !important
+                            ul
+                                line-height: 2.3
+                                font-size: 15px
+                                font-weight: 300
+                                li
+                                li.del
+                                    color: #ccc
+                                    text-decoration: line-through
+                        .col-footer
+                            button
+                                font-size: 15px
+                                font-weight: bold
+                                padding: 10px 30px
+        .questions
+            background: $gray-color
+            .questions-content
+                .questions-list
+                    width: 80%
+                    margin: 0 auto
+                    ul
+                        li
+                            border-bottom: 1px solid #1c6bd13d
+                            position: relative
+                            padding: 15px
+                            padding-bottom: 0
+                            cursor: pointer
+                            h4
+                                font-size: 18px
+                                font-weight: 400
+                            p
+                                opacity: 0.7
+                                font-weight: 300
+                                height: 0
+                                overflow: hidden
+                                transition: 700ms
+                            &::before
+                                content: "⌵"
+                                position: absolute
+                                left: -1.5%
+                                font-size: 25px
+                                top: 0
+                        li.active
+                            h4
+                                color: $blue-color
+                            p
+                                display: block
+                            &::before
+                                content: "⌃"
+                                top: 8% !important
+                                left: -2%
+                                font-size: 30px
+        .contact
+            .contact-content
+                .row
+                    .col-content
+                        margin-bottom: 20px
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12)
+                        padding: 20px
+                        line-height: 2
+                        .icon
+                            width: 50px
+                            margin: 0 auto
+                            padding: 20px
+                            border: 1px dashed $blue-color
+                            border-radius: 50%
+                            height: 50px
+                            font-size: 25px
+                            color: $blue-color
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            svg
+                        h3
+                            color: $gray-header-color
+                            text-transform: capitalize
+                            font-size: 20px
+                            padding-top: 15px
+                        p
+                            opacity: 0.7
+                            font-size: 15px
+                .row.form-iframe
+                    padding-top: 20px
+                    .content
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12)
+                        margin-bottom: 20px
+                        iframe
+                            width: 100%
+                            min-height: 385px
+                        form
+                            padding: 30px
+                            input,
+                            textarea
+                                margin-bottom: 20px
+                                width: 100%
+                                padding: 10px 15px
+                                font-size: 15px
+                                color: $dark-color
+                                border: 1px solid #eee
+                            .col
+                                input
+                                    width: 100%
+                                &:focus
+                                    border-color: $blue-color !important
+                            textarea
+                            button
+                                margin: 0 auto
+                                display: block
+                                padding: 10px 20px
+    .footer
+        .footer-newsletter
+            background: $gray-color
+            line-height: 2
+            h4
+                font-weight: bold
+                color: $dark-color
+            p
+                opacity: 0.6
+                font-size: 15px
+            form
+                display: flex
+                justify-content: center
+                padding-top: 20px
+                width: 90%
+                margin: 0 auto
+                input
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12)
+                    border: none
+                    padding: 5px 20px
+                    border-radius: 5px 0 0 5px
+                input[type="submit"]
+                    border-radius: 0 5px 5px 0
+        .footer-top
+            .footer-top-content
+                .row
+                    color: $gray-header-color
+                    .col-content
+                        margin-bottom: 20px
+                        h3
+                            color: $dark-color
+                        p
+                            font-size: 15px
+                            line-height: 1.8
+                        h5
+                            color: $dark-color
+                            font-size: 16px
+                            font-weight: bold
+                        .links
+                            line-height: 2.5
+                            li
+                                font-size: 15px
+                                opacity: 0.8
+                                a
+                                    padding: 0 5px
+                                    color: $gray-header-color
+                                &::before
+                                    content: ">"
+                                    color: $blue-color
+                                &:hover
+                                    a
+                                        color: $blue-color
+                        .links.social-icons
+                            gap: 10px
+                            font-size: 25px
+                            display: flex
+                            li
+                                background: $blue-color
+                                padding: 0 5px
+                                border-radius: 5px
+                                transition: 0.5s
+                                opacity: 1
+                                &:hover
+                                    opacity: 0.7
+                                a
+                                    color: $white-color
+                                &::before
+                                    content: none
+                                    opacity: 1
+                            svg
+        .footer-bottom
+            background: $gray-color
+            .content
+                justify-content: space-between
+                align-items: center
+                padding-top: 20px
+                font-size: 15px
+                color: $dark-color
+                opacity: 0.8
+                p
+                    text-align: start
+                p.copy
+                    text-align: end
+                span
+                    color: $blue-color
+    a.up
+        position: fixed
+        right: 1%
+        bottom: 2%
+        transition: 700ms
+        display: none

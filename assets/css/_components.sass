@@ -1,0 +1,35 @@
+
+// Colors
+
+$blue-color: #106eea
+$dark-color: #444
+$white-color: #fff
+$gray-color: #f6f9fe
+$gray-progress-color: #e2eefd
+$dark-gray-color: #f1f6fe
+$gray-header-color: #777777
+$black-color: #000
+
+// mixins
+
+@mixin lineAfter()
+    background: $blue-color
+    content: ""
+    width: 0
+    height: 2px
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    transition: all 700ms
+
+@mixin bottomTopAfter()
+    position: absolute
+    content: ""
+    bottom: 0
+    left: 0
+    background: $blue-color
+    width: 100%
+    height: 0
+    z-index: -1
+    transition: all 700ms
+    border-radius: 10px

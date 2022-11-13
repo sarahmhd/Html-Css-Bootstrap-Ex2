@@ -1,0 +1,134 @@
+
+/* For large devices */
+// @media only screen and (min-width: 1200px)
+
+/* For medium devices */
+@media only screen and (min-width: 769px) and (max-width: 1199px)
+    .header
+        .collapse
+            .navbar-nav
+                transition: none
+                gap: 0 !important
+                box-shadow: 5px 5px 14px 0px $gray-progress-color , -5px -5px 14px 0px $gray-progress-color
+                padding: 20px
+                text-align: center
+                & > li
+                    &::after
+                        content: none !important
+    .main
+        .welcome
+            .welcome-content
+                margin-top: 30% !important
+                text-align: center
+                .btns
+                    justify-content: center
+        .clients
+            .img
+                margin-bottom: 20px
+                img
+                    width: 30% !important
+        .testimonials
+            height: 50vh !important
+        .portfolio
+            .portfolio-content
+                .galary
+                    column-count: 2 !important
+                    margin-bottom: 10px
+        .team
+            .col-content
+                margin-left: 8%
+    .footer
+        .footer-bottom
+            p
+                text-align: center !important
+/* For small devices */
+@media only screen and (max-width: 768px)
+    .top-section
+        ul.social
+            display: none !important
+    .header
+        .collapse
+            .navbar-nav
+                transition: none
+                gap: 0 !important
+                box-shadow: 5px 5px 14px 0px $gray-progress-color , -5px -5px 14px 0px $gray-progress-color
+                padding: 20px
+                text-align: center
+                & > li
+                    &::after
+                        content: none !important
+    .main
+        .welcome
+            .welcome-content
+                margin-top: 50% !important
+                text-align: center
+            h1
+                font-size: 2rem !important
+            p
+                font-size: 20px !important
+            .btns
+                justify-content: center
+        .featured-services
+            .col-content
+                text-align: center
+        .about
+            .about-content
+                .header-info
+                    p
+                        width: 100% !important
+                .row
+                    text-align: center
+                    img
+                        margin-bottom: 20px !important
+                    ul
+                        text-align: start
+        .clients
+            .img
+                margin-bottom: 20px
+                img
+                    width: 20% !important
+        .services
+            .services-content
+                .header-info
+                    p
+                        width: 100% !important
+        .portfolio
+            .portfolio-content
+                p
+                    width: 100% !important
+                .galary
+                    column-count: 1 !important
+                    margin-bottom: 10px
+        .team
+            p
+                width: 100% !important
+            .col-content
+                margin-left: 8%
+        .pricing
+            .pricing-content
+                p
+                    width: 100% !important
+        .questions
+            .questions-content
+                p
+                    width: 100% !important
+                .questions-list
+                    width: 100%
+                    line-height: 1.6
+                    li.active
+                        &::before
+                            left: -15px !important
+        .contact
+            .contact-content
+                p
+                    width: 100% !important
+    .footer
+        .footer-newsletter
+            form
+                width: 59%
+                input
+                    font-size: 13px !important
+                    // padding: 5px !important
+        .footer-bottom
+            p
+                text-align: center !important
